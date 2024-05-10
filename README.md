@@ -24,3 +24,7 @@ O aplicativo, construído com Kotlin, Android e Jetpack Compose, permite aos usu
 
 ## Exemplo de Uso
 O vídeo demonstra como usar o aplicativo, desde o upload do currículo até a análise dos resultados.
+
+https://github.com/edijaniosouza/resume-analyser/assets/45483308/8dcdbbbe-621b-4b3c-a8f1-6952d74d92f8
+
+
