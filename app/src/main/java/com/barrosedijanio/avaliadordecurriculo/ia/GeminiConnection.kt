@@ -8,7 +8,6 @@ import com.google.ai.client.generativeai.type.HarmCategory
 import com.google.ai.client.generativeai.type.SafetySetting
 import com.google.ai.client.generativeai.type.generationConfig
 
-
 class GeminiConnection {
     private val apiKey = BuildConfig.API_KEY
     private val generativeModel = GenerativeModel(
@@ -31,8 +30,13 @@ class GeminiConnection {
 
     suspend fun generation(content: Content): String? {
         return try {
-            val chat = generativeModel.startChat( listOf(inputHistory, outputHistory, input2, output2))
-            chat.sendMessage(content).text
+            generativeModel.generateContent(
+                inputHistory,
+                outputHistory,
+                input2,
+                output2,
+                content
+            ).text
         } catch (e: Exception) {
             e.message
         }

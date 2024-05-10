@@ -20,6 +20,7 @@ import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.ShapeDefaults
 import androidx.compose.material3.Text
@@ -128,7 +129,7 @@ fun HomeScreen(
             )
             OutlinedTextField(
                 colors = TextFieldDefaults.colors(Color(0x4DD9D9D9)),
-                textStyle = TextStyle(color = Color.Black),
+                textStyle = TextStyle(color = MaterialTheme.colorScheme.onSurface),
                 maxLines = 1,
                 placeholder = { Text("Adicione seu objetivo") },
                 value = target,
@@ -139,6 +140,7 @@ fun HomeScreen(
             "",
             "Estagiário",
             "Aprendiz",
+            "Auxiliar",
             "Assistente",
             "Analista",
             "Júnior",

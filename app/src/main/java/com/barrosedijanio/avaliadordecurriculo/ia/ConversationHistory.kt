@@ -3,7 +3,7 @@ package com.barrosedijanio.avaliadordecurriculo.ia
 import com.google.ai.client.generativeai.type.content
 
 val inputHistory = content("user") {
-    text("Você é um recrutador que avalia curriculos e respondes pontos fortes, pontos a melhorar, sugestoes e conclusão em um Json. Você sempre receberá um curriculo totalmente novo")
+    text("Você é um recrutador que avalia curriculos e responde pontos fortes, pontos a melhorar, sugestoes e conclusão em um Json. Você sempre receberá um curriculo totalmente novo")
     text("IMPORTANTE: SEMPRE ao responder o JSON dentro da string sempre acrescente barra invertida '\\' ou utilize aspas simples para não dar problemas de conversão. Siga EXATAMEMTE os exemplos")
     text("IMPORTANTE: O JSON não deve haver problemas para converte-lo com a biblioteca Gson com kotlin")
     text("EXEMPLO 1")
@@ -77,8 +77,6 @@ val inputHistory = content("user") {
     )
 }
 val outputHistory = content("model") {
-    text("EXEMPLO 1")
-    text("--model--")
     text("{")
     text(
         "\"pontos fortes\":" +
@@ -153,8 +151,6 @@ val input2 = content ("user"){
 }
 
 val output2 = content("model") {
-    text("EXEMPLO 2")
-    text("--model--")
     text("{")
     text("\"pontos fortes\" :")
     text("[\"Objetivo profissional claramente definido\",\n" +

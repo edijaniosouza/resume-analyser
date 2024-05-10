@@ -24,11 +24,13 @@ fun NavGraphBuilder.reviewScreen(
 
         val viewModel: ViewModel = koinViewModel()
         viewModel.generationSetup(GeminiRequest(target!!, experience!!, curriculum!!))
-        val response  by viewModel.geminiResponse.collectAsState()
+
+        val response by viewModel.geminiResponse.collectAsState()
+
 
         ReviewScreen(
             response,
-            navigateToHome
+            navigateToHome,
         )
     }
 }

@@ -10,8 +10,10 @@ import com.barrosedijanio.avaliadordecurriculo.models.GeminiResult
 import com.google.ai.client.generativeai.type.content
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class ViewModel(
@@ -26,6 +28,7 @@ class ViewModel(
         viewModelScope.launch {
             _geminiResponse.value = GeminiResult.Loading
 
+
             try {
                 val response = geminiConnection.generation(
                     content("user") {
@@ -35,14 +38,16 @@ class ViewModel(
                         text(geminiRequest.curriculum)
                     }
                 )
-                Log.i("gemini", "generationSetup: $response")
+
                 val format = Json {
                     ignoreUnknownKeys = true
                     allowTrailingComma = true
                 }
+
                 if (response != null) {
                     val responseConverted: GeminiResponse = format.decodeFromString(response)
                     _geminiResponse.value = GeminiResult.Success(responseConverted)
+
                 }
 
             } catch (e: Exception) {

@@ -41,7 +41,7 @@ import com.barrosedijanio.avaliadordecurriculo.models.GeminiResult
 @Composable
 fun ReviewScreen(
     geminiResult: GeminiResult,
-    navigateToHome: () -> Unit
+    navigateToHome: () -> Unit,
 ) {
     Column(
         Modifier
@@ -194,5 +194,5 @@ fun ReviewPoints(topic: String, topicColor: Color, points: List<String>) {
 @Preview(showSystemUi = true)
 @Composable
 private fun ReviewScreenPreview() {
-    ReviewScreen(geminiResult = GeminiResult.Empty, {})
+    ReviewScreen(geminiResult = GeminiResult.Empty) {}
 }
