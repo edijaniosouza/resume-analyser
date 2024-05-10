@@ -221,7 +221,7 @@ fun HomeScreen(
 
 private fun convertPdfToString(inputStream: InputStream, context: Context): String {
 
-    PDFBoxResourceLoader.init(context);
+    PDFBoxResourceLoader.init(context)
     val document = PDDocument.load(inputStream)
     val stripper = PDFTextStripper()
     val text = stripper.getText(document)
@@ -232,5 +232,5 @@ private fun convertPdfToString(inputStream: InputStream, context: Context): Stri
 @Preview(showSystemUi = true)
 @Composable
 private fun HomeScreenPreview() {
-    HomeScreen(generateResponse = { _, _, _ -> Unit })
+    HomeScreen(generateResponse = { _, _, _ ->  })
 }

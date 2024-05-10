@@ -1,6 +1,3 @@
-import com.android.ide.common.resources.readResourcesPropertiesFile
-import org.apache.commons.compress.harmony.pack200.PackingUtils.config
-import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
@@ -82,9 +79,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.generativeai)
-//    implementation("org.apache.pdfbox:pdfbox-app:2.0.31")
     implementation(libs.pdfbox.android)
     implementation (libs.koin.androidx.compose)
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.kotlinx.serialization.json)
 
 }

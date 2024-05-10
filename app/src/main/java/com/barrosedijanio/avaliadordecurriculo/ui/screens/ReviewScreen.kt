@@ -102,7 +102,7 @@ fun ReviewScreen(
                 var like by remember { mutableStateOf(false) }
                 var dislike by remember { mutableStateOf(false) }
                 var likeColor = Color(0xFF138800)
-                var dislikeColor = Color(0xFF138800)
+                var dislikeColor = Color(0xFF960000)
                 IconButton(onClick = { like = !like }) {
 
                     if (like) {
